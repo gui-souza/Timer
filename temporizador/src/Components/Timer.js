@@ -10,6 +10,7 @@ class Timer extends Component {
         super(props);
         this.soma = 1;
         this.angle = 6;
+        this.rodando = false;
         this.timeValue = null
         this.state = {
             value: 60
@@ -17,16 +18,20 @@ class Timer extends Component {
     }
 
     countdown() {
-        this.timeValue = setInterval(() => {
-            this.setState({
-                value : this.state.value - this.soma
-            }) 
-            document.querySelector("#img").style.transform = `rotate(${this.angle}deg)`;
-            this.angle = this.angle + 6;
-            if (this.state.value <= 0) {
-                clearInterval(this.timeValue);
-            }
-            }, 1000);
+        if (this.rodando === false) {
+            this.rodando = true;
+            this.timeValue = setInterval(() => {
+                this.setState({
+                    value : this.state.value - this.soma
+                }) 
+                document.querySelector("#img").style.transform = `rotate(${this.angle}deg)`;
+                this.angle = this.angle + 6;
+                if (this.state.value <= 0) {
+                    clearInterval(this.timeValue);
+                    
+                }
+                }, 1000);
+        }   
     }
 
     stopCount() {
