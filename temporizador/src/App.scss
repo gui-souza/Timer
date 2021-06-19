@@ -1,0 +1,29 @@
+.buttons {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+
+    .count {
+      margin-bottom: 5px;
+    }
+
+    .stop {
+      margin-top: 5px;
+    }
+}
+
+.relogio-completo {
+
+  .relogio {
+    width: 40rem;
+    justify-content: center;
+  }
+  
+  .ponteiro {
+    width: 0.9rem;
+    position: relative;
+    left: -325px;
+  }
+}
